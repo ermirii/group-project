@@ -116,6 +116,10 @@
     <button class="prev" onclick="prevSlide()">Prev</button>
     <button class="next" onclick="nextSlide()">Next</button>
   </div>
+  <footer id="myFooter">
+    <!-- Footer content will be dynamically added here -->
+  </footer>
+
 
   
 
@@ -179,6 +183,22 @@
       slideIndex = (slideIndex - 1 + slides.length) % slides.length;
       slides[slideIndex].classList.add('active');
     }
+    function createFooter() {
+  // Create elements
+  const footer = document.getElementById('myFooter');
+  const footerContent = document.createElement('p');
+  const copyrightText = document.createTextNode('© 2024 My Website. All rights reserved.');
+
+  // Customize footer content
+  footerContent.appendChild(copyrightText);
+  footerContent.style.textAlign = 'center';
+
+  // Append content to footer
+  footer.appendChild(footerContent);
+}
+
+// Call the function to create the footer when the page loads
+document.addEventListener('DOMContentLoaded', createFooter);
 
     
   </script>
